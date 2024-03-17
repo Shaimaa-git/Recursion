@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-class search {
+class Search {
 
     public static void main(String args[]) {
 
         // create an object of Main class
-        search obj = new search();
+        Search obj = new Search();
 
         // create a sorted array
         int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
