@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class Search {
@@ -8,8 +9,17 @@ class Search {
         Search obj = new Search();
 
         // create a sorted array
-        int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        int n = array.length;
+       ArrayList<Integer> array = new ArrayList<>();
+        array.add(1);
+        array.add(2);
+        array.add(3);
+        array.add(4);
+        array.add(5);
+        array.add(6);
+        array.add(7);
+        array.add(8);
+        array.add(9);
+        int n = array.size();
 
         // get input from user for element to be searched
         Scanner input = new Scanner(System.in);
@@ -27,7 +37,7 @@ class Search {
         else
             System.out.println("Element found at index " + result);
     }
-    int binarySearch(int array[], int element, int low, int high) {
+    int binarySearch(ArrayList<Integer> array, int element, int low, int high) {
 
         // Repeat the loop until low and high meet each other
         while (low <= high) {
@@ -36,16 +46,16 @@ class Search {
             int mid = low + (high - low) / 2;
 
             //check  if target element is the mid-element
-            if (array[mid] == element)
+            if (array.get(mid) == element)
                 return mid;
 
             // check if target element is less than mid-element
             // search only the left side of mid
-            if (array[mid] < element)
+            if (array.get(mid) < element)
                 low = mid + 1;
 
-            // if element is greater than mid-element
-            //search only the right side of mid
+                // if element is greater than mid-element
+                //search only the right side of mid
             else
                 high = mid - 1;
         }
